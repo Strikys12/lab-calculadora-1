@@ -5,12 +5,16 @@ const opcionesValidas = ["+", "-", "*", "/", "si", "no"]
 
 while (activo === true) {
   console.log()
-  console.log(" -------- Calculadora ---------");
-  console.log()
   let operacion = prompt("Cuál operación deseas ejecutar (+,-,*,/): ")
+  console.log()
 
   let numero1 = Number(prompt("Ingresa el primer número: "))
   let numero2 = Number(prompt("Ingresa el segundo número: "))
+
+  if (Number.isNaN(numero1) || Number.isNaN(numero2)) {
+    console.log("Debes ingresar números válidos")
+    continue
+  }
 
   if (!opcionesValidas.includes(operacion)) {
     console.log("Opción no válida, intenta de nuevo")
@@ -30,19 +34,24 @@ while (activo === true) {
   }
 
   if (operacion === "/") {
-    if (numero1 === 0 || numero2 === 0) {
+    const div = numero1 / numero2
+
+    if (!Number.isFinite(div)) {
       console.log("No puedes dividir entre cero")
-    } else {
-      console.log(`El resultado es ${numero1 / numero2}`)
-    }
-    else { console.log("operación inválida") }
-    let respuesta = prompt("Desea hacer otra operación")
-    if (respuesta === "si") {
-      activo = true
+      continue
     }
 
-    if (respuesta.toLowerCase() === "no") {
-      activo = false
-    }
+    console.log(`El resultado es ${div}`)
   }
 
+  console.log()
+  let respuesta = prompt("Desea hacer otra operación (si/no): ")
+
+  if (respuesta.toLowerCase() === "si") {
+    activo = true
+  }
+
+  if (respuesta.toLowerCase() === "no") {
+    activo = false
+  }
+}
