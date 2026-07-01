@@ -11,21 +11,21 @@ numero2 = Number(numero2)
 let resultado = 0;
 
 if (operacion === "+") {
-    resultado = numero1 + numero2;
-
+  resultado = numero1 + numero2;
+  console.log(resultado)
 }
 else if (operacion === "-") {
-    resultado = numero1 - numero2;
-
+  resultado = numero1 - numero2;
+  console.log(resultado)
 }
 else if (operacion === "*") {
-    resultado = numero1 * numero2;
-
+  resultado = numero1 * numero2;
+  console.log(resultado)
 }
 else if (operacion === "/") {
-    resultado = numero1 / numero2;
-
+  if (numero1 === 0 || numero2 === 0) {
+    console.log("No puedes dividir entre cero")
+  } else {
+    resultado = numero1 / numero2
+  }
 }
-
-console.log(resultado)
-
