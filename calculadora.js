@@ -31,7 +31,9 @@ while (activo === true) {
         }
     }
     else { console.log("operación inválida") }
-    let respuesta = prompt("Desea hacer otra operación")
+
+
+    let respuesta = prompt("Desea hacer otra operación:")
     if (respuesta === "si") {
         activo = true
     }
