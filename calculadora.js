@@ -12,19 +12,20 @@ let resultado = 0;
 
 if (operacion === "+") {
     resultado = numero1 + numero2;
-    console.log(resultado)
+
 }
 else if (operacion === "-") {
     resultado = numero1 - numero2;
-    console.log(resultado)
+
 }
 else if (operacion === "*") {
     resultado = numero1 * numero2;
-    console.log(resultado)
+
 }
 else if (operacion === "/") {
     resultado = numero1 / numero2;
-    console.log(resultado)
+
 }
 
+console.log(resultado)
 
